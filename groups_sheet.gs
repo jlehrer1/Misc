@@ -1,9 +1,19 @@
-//read in spreadsheet
-var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+try {
+  var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var stimuliSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+}
+catch(err) {
+  Logger.log('Error reading in spreadsheet. Error message is: ' + err.message)
+}
 
-//read in current sheet
-var stimuliSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  
+try {
+  imgsFolder = DriveApp.getFolderById('1JnjAuPrx8DyjGMGg2bKup3J5tNYaJVhc');
+  vidFolder = DriveApp.getFolderById('1hM68Fq6dcnP3J9FqNrJ9kd40wXzSIYPl');
+  audFolder = DriveApp.getFolderById('1hjZWpA-uuvLzUww832jxhxvzLCLFCAM9');
+}
+catch(err) {
+  Logger.log('Error reading in folders by ID. Check that your URL is correct. Error message is: ' + err.message);
+}
 
 function Group(name, stimuliType, question1, question2, stimuli) {
   this.name = name;
@@ -13,12 +23,27 @@ function Group(name, stimuliType, question1, question2, stimuli) {
   this.stimuli = stimuli;
 }
 
-function Stimuli(name) {
+function Stimuli(name, stimuli) {
   this.name = name;
+  this.stimuli = stimuli;
 }
 
 function get(col, row) {
   return stimuliSheet.getRange(col + String(row)).getValue();
+}
+
+function getFolderName(group) {
+  name = group.stimuliType;
+  if (name == 'Fine Art' || name == 'Photo') {
+    return 'Image';
+  }
+  if (name == 'EphFilm' || name == 'Cartoon') {
+    return 'Video';
+  }
+  if (name == 'Poetry' || name == 'Music') {
+    return 'Audio';
+  }
+  return 'error in getFolderName(group)';
 }
 
 function generateGroups() {
