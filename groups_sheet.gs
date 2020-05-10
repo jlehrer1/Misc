@@ -1,3 +1,5 @@
+// ID in a given Google link, like [https://drive.google.com/drive/u/0/folders/1eIF0kB5hj-wt79KQ4aQQ8jDOAXza5nXi] is given by the string after the last /. i.e. 
+// '1eIF0kB5hj-wt79KQ4aQQ8jDOAXza5nXi'
 let VID_FOLD_ID = '1hM68Fq6dcnP3J9FqNrJ9kd40wXzSIYPl';
 let IMG_FOLD_ID = '1JnjAuPrx8DyjGMGg2bKup3J5tNYaJVhc';
 let AUD_FOLD_ID = '1hjZWpA-uuvLzUww832jxhxvzLCLFCAM9';
@@ -55,6 +57,7 @@ function generateGroups() {
   //generate list of objs
   for (let i = 0; i < cols.length; i++) {
     var col = cols[i];
+    //generate group based on col[i] 
     var currGroup = new Group(
         name = get(col, 1),
         stimuliType = get(col, 2),
@@ -71,13 +74,13 @@ function generateGroups() {
     folderType = getFolderType(currGroup);
     folder = DriveApp.getFolderById(folderType[0]);
     
+    //generate Object.Stimuli.stimuli with the files from the Drive folders. Returns as a FileIterator object.
     for (let j = 0; j < currGroup.stimuli.length; j++) {
-      currGroup.stimuli[j].stimuli = folder.getFilesByName(currGroup.stimuli[j].name + folderType[1]).next();
+      currGroup.stimuli[j].stimuli = folder.getFilesByName(currGroup.stimuli[j].name + folderType[1]);
     }
-    
     
     returnObjs.push(currGroup)
   }
-  Logger.log(returnObjs)
+  
   return (returnObjs)
 }
