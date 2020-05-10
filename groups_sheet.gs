@@ -30,21 +30,21 @@ function generateGroups() {
   
   //generate list of objs
   for (let i = 0; i < 5; i++) {
-    col = cols[i];
-    for (let j = 1; j <= 7; j++) {
-      currGroup = Group(
+    var col = cols[i];
+    var currGroup = new Group(
         name = get(col, 1),
         stimuliType = get(col, 2),
         question1 = get(col, 6),
         question2 = get(col, 7),
         stimuli = [
-          Stimuli(name = get(col, 3)),
-          Stimuli(name = get(col, 4)),
-          Stimuli(name = get(col, 5)),
+          new Stimuli(name = get(col, 3)),
+          new Stimuli(name = get(col, 4)),
+          new Stimuli(name = get(col, 5)),
         ],
-      )
-    }
+     )
+    returnObjs.push(currGroup)
   }
-
+  
+  Logger.log(returnObjs)
   return (returnObjs)
 }
