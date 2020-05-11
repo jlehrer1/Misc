@@ -1,2 +1,2 @@
 # Misc
-Just a collection of files I may want for later. Not organized well!
+Random collection of files that don't have a home. Not organized well!
