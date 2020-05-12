@@ -133,6 +133,6 @@ function zshrcgit() {
     cd /Users/jmlehrer/Documents/Projects/misc;
     cp ~/.zshrc .;
     git add .zshrc; git commit -m "updated .zshrc"; git push;
-    cd dir;
+    cd "$dir";
 }
 
