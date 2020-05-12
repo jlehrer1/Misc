@@ -8,7 +8,9 @@ export ZSH="/Users/jmlehrer/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 ZSH_THEME="af-magic"
+
 # nice themes: af-magic, candy-kingdom
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -115,19 +117,19 @@ unset __conda_setup
 
 alias jn="jupyter notebook"
 alias c="clear"
+
 export PATH=$PATH:/Users/jmlehrer/Library/Python/2.7/bin
 alias pip=/usr/local/bin/pip3
 alias python="python3"
 export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
 LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
 alias zshsource="source ~/.zshrc"
+
 function matlab() {
     open -a "Matlab" "$@"
 }
-# command for update .zshrc in Misc folder
-#alias zshrcgit="cp ~/.zshrc ~/Documents/Projects/misc"
 
-#test function
+# pushes .zshrc to my Misc git repo
 function zshrcgit() {
     cd "${HOME}/Documents/Projects/Misc"
     cp "${HOME}/.zshrc" .
