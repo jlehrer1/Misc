@@ -121,7 +121,18 @@ alias python="python3"
 export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
 LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
 alias zshsource="source ~/.zshrc"
+function matlab() {
+    open -a "Matlab" "$@"
+}
+# command for update .zshrc in Misc folder
+#alias zshrcgit="cp ~/.zshrc ~/Documents/Projects/misc"
 
-
-
+#test function
+function zshrcgit() {
+    dir=$(pwd)
+    cd /Users/jmlehrer/Documents/Projects/misc;
+    cp ~/.zshrc .;
+    git add .zshrc; git commit -m "updated .zshrc"; git push;
+    cd dir;
+}
 
