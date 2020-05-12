@@ -129,10 +129,9 @@ function matlab() {
 
 #test function
 function zshrcgit() {
-    dir=$(pwd)
-    cd /Users/jmlehrer/Documents/Projects/misc;
-    cp ~/.zshrc .;
-    git add .zshrc; git commit -m "updated .zshrc"; git push;
-    cd "$dir";
+    cd "${HOME}/Documents/Projects/Misc"
+    cp "${HOME}/.zshrc" .
+    git add .zshrc && git commit -m "updated .zshrc" && git push
+    cd "$OLDPWD"
 }
 
