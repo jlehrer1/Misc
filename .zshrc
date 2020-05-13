@@ -122,7 +122,7 @@ export PATH=$PATH:/Users/jmlehrer/Library/Python/2.7/bin
 alias pip=/usr/local/bin/pip3
 alias python="python3"
 export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
-LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
+#LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
 alias zshsource="source ~/.zshrc"
 
 function matlab() {
