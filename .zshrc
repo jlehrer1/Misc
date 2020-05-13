@@ -115,34 +115,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias jn="jupyter notebook"
-alias c="clear"
-
-export PATH=$PATH:/Users/jmlehrer/Library/Python/2.7/bin
-alias pip=/usr/local/bin/pip3
-alias python="python3"
-export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
-#LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
-alias zshsource="source ~/.zshrc"
-
-function matlab() {
-    open -a "Matlab" "$@"
-}
-
-# pushes .zshrc to my Misc git repo
-function zshrcgit() {
-    cd "${HOME}/Documents/Projects/Misc"
-    cp "${HOME}/.zshrc" .
-    git add .zshrc
-    if [ -z "$1" ]; then
-        git commit 
-    else
-        git commit -m "$1"
-    fi
-    git push
-    cd "$OLDPWD"
-}
-
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -165,3 +137,32 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+
+export PATH=$PATH:/Users/jmlehrer/Library/Python/2.7/bin
+export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
+#LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
+
+function matlab() {
+    open -a "Matlab" "$@"
+}
+
+# pushes .zshrc to my Misc git repo
+function zshrcgit() {
+    cd "${HOME}/Documents/Projects/Misc"
+    cp "${HOME}/.zshrc" .
+    git add .zshrc
+    if [ -z "$1" ]; then
+        git commit 
+    else
+        git commit -m "$1"
+    fi
+    git push
+    cd "$OLDPWD"
+}
+
+alias pip=/usr/local/bin/pip3
+alias python="python3"
+alias jn="jupyter notebook"
+alias c="clear"
+alias zshsource="source ~/.zshrc"
+alias e="open -e"
