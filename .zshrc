@@ -133,7 +133,7 @@ function matlab() {
 function zshrcgit() {
     cd "${HOME}/Documents/Projects/Misc"
     cp "${HOME}/.zshrc" .
-    git add .zshrc && git commit -m "updated .zshrc" && git push
+    git add .zshrc && git commit -m "$1" && git push
     cd "$OLDPWD"
 }
 
