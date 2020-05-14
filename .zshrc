@@ -167,6 +167,7 @@ alias c="clear"
 alias zshsource="source ~/.zshrc"
 alias e="open -e"
 alias gitignore="vim .gitignore"
+alias treetxt="tree > tree.txt"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc'; fi
