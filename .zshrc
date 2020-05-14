@@ -166,3 +166,10 @@ alias jn="jupyter notebook"
 alias c="clear"
 alias zshsource="source ~/.zshrc"
 alias e="open -e"
+alias gitignore="vim .gitignore"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc'; fi
