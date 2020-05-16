@@ -151,6 +151,7 @@ function zshrcgit() {
     cd "${HOME}/Documents/Projects/Misc"
     cp "${HOME}/.zshrc" .
     git add .zshrc
+    git add .zsh_aliases
     if [ -z "$1" ]; then
         git commit 
     else
@@ -160,19 +161,11 @@ function zshrcgit() {
     cd "$OLDPWD"
 }
 
-alias pip=/usr/local/bin/pip3
-alias python="python3"
-alias jn="jupyter notebook"
-alias c="clear"
-alias zshsource="source ~/.zshrc"
-alias e="open -e"
-alias gitignore="vim .gitignore"
-alias treetxt="tree > tree.txt"
-alias README="code README.md"
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc'; fi
+
+source ~/.zsh_aliases
