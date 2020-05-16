@@ -150,6 +150,7 @@ function matlab() {
 function zshrcgit() {
     cd "${HOME}/Documents/Projects/Misc"
     cp "${HOME}/.zshrc" .
+    cp "${HOME}/.zsh_aliases" .
     git add .zshrc
     git add .zsh_aliases
     if [ -z "$1" ]; then

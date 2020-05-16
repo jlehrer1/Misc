@@ -1,0 +1,10 @@
+alias pip=/usr/local/bin/pip3
+alias python="python3"
+alias jn="jupyter notebook"
+alias c="clear"
+alias zshsource="source ~/.zshrc"
+alias e="open -e"
+alias gitignore="vim .gitignore"
+alias treetxt="tree > tree.txt"
+alias README="code README.md"
+
