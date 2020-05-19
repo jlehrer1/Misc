@@ -8,10 +8,8 @@ export ZSH="/Users/jmlehrer/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# color schemes: Atom Dark, VSCode Dark
 ZSH_THEME="af-magic"
 
-# nice themes: af-magic, candy-kingdom, mikeh
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -70,7 +68,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,50 +95,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
+# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jmlehrer/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/jmlehrer/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jmlehrer/opt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/jmlehrer/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+ZSH_DISABLE_COMPFIX=true
 
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-bin-gem-node
-
-### End of Zinit's installer chunk
-
-export PATH=$PATH:/Users/jmlehrer/Library/Python/2.7/bin
-export PATH=$PATH:/Users/jmlehrer/Library/Python/3.7/bin
-#LSCOLORS="" #removes that weird folder highlighting that happens after ls'ing it
+alias zshconfig="vim ~/.zshrc"
 
 function matlab() {
     open -a "Matlab" "$@"
@@ -161,12 +121,5 @@ function zshrcgit() {
     git push
     cd "$OLDPWD"
 }
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jmlehrer/google-cloud-sdk/completion.zsh.inc'; fi
 
 source ~/.zsh_aliases

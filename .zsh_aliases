@@ -7,4 +7,4 @@ alias e="open -e"
 alias gitignore="vim .gitignore"
 alias treetxt="tree > tree.txt"
 alias README="code README.md"
-
+alias gs="git status"
