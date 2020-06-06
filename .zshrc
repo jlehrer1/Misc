@@ -137,5 +137,8 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# <<< conda initialize <<
+
+fpath+=~/Documents/conda-zsh-completion
+compinit
 
