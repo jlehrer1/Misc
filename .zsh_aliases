@@ -10,6 +10,7 @@ alias c="clear"
 alias e="open -e"
 alias treetxt="tree > tree.txt"
 alias README="code README.md"
+alias p="ipython"
 
 # aliases for conda 
 alias el="conda env list"
